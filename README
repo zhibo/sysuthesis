@@ -1,6 +1,12 @@
-Author: Bo Zhi <bobo900128@gmail.com>
+==ENVIRONMENT==
+ * linux
+ * ctex
 
-generate the sample.pdf
+==COMPILE==
 # make
-view
+
+==VIEW==
 # make view
+
+==CLEAN==
+# make clean

@@ -40,7 +40,6 @@ clean:
 		$(JOBNAME).out $(JOBNAME).blg $(JOBNAME).bbl\
 		$(JOBNAME).ps $(JOBNAME).dvi missfont.log
 	$(RM) chap/*.aux
-	cd img && make clean
 
 view:
 	$(PDFVIEWER) $(JOBNAME).pdf

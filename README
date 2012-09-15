@@ -1,12 +1,11 @@
-==ENVIRONMENT==
- * linux
- * ctex
+SYSUTHESIS
+==========
 
-==COMPILE==
-# make
-
-==VIEW==
-# make view
-
-==CLEAN==
-# make clean
+generate the sample.pdf
+``bash
+make
+``
+view
+``bash
+make view
+``

@@ -2,10 +2,9 @@ SYSUTHESIS
 ==========
 
 generate the sample.pdf
-``bash
+```bash
 make
-``
+
 view
-``bash
+```bash
 make view
-``

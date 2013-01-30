@@ -1,1 +1,90 @@
-\chapter{第三章标题}
+% vim:ts=4:sw=4
+%
+% Copyright (c) 2008-2009 solvethis
+% Copyright (c) 2010-2012 Casper Ti. Vector
+% Public domain.
+
+\chapter{问题及其解决}
+	\section{文档中已经提到的常见问题（按重要性排序）}
+
+	在默认设置（启用 \verb|colorlinks| 选项）下，
+	黑白打印时文档中的部分彩色链接可能会变成浅灰色，
+	解决方式见第 \ref{ssec:extra} 小节。
+
+	中文字体字库不全（只包含 GB2312 字符集内字符）时，
+	生成的 pdf 文档中可能缺少部分字符，
+	解决方式见第 \ref{sec:req} 节。
+
+	\verb|img/| 目录中 eps 图片未转换为 pdf 格式时，%
+	pdf\LaTeX{} 方式编译可能出错，
+	解决方式见第 \ref{sec:doc-dir} 节。
+
+	使用过旧的 \TeX{} 系统和各宏包，
+	或使用某些 Linux 发行版软件仓库所提供的 \TeX{}Live 时，
+	可能引起一些问题，
+	详见第 \ref{sec:req} 节。
+
+	文档默认情况下是双面模式，章末可能产生空白页，详见第 \ref{ssec:options} 小节。
+
+	一些高级设置，
+	如封面中部分内容长度超过预设空间容量时的设置，
+	见第 \ref{sec:advanced} 节。
+
+	biblatex 宏包\cite{biblatex}会自行设定 \verb|\bibname|，
+	故会覆盖通过 \verb|\CTEXoptions| 设定的参考文献列表标题。
+	使用 biblatex 的用户可以使用 \verb|\printbibliography| 的
+	\verb|title| 选项来手动设定参考文献列表的标题，例如：
+\begin{Verbatim}[frame = single]
+\printbibliography[title = {文献}, ...] % “...”为其它选项。
+\end{Verbatim}
+
+	\section{其它可能存在的问题}
+		\subsection{上游宏包可能引起的问题}
+
+		hyperref 宏包\supercite{hyperref}和一些宏包可能发生冲突。
+		关于如何避免这些冲突，可以参考 hyperref 宏包的文档。
+		此文件通常和执行 \verb|texdoc hyperref| %
+		时打开的 pdf 文件位于同一目录中。
+		低于 1.02c 版本的 ctex 宏包中对 hyperref 的设置有些不周，
+		因此文档类中对其进行了一些手动的处理。
+		考虑到新版本 ctex 宏包将逐渐被更多人采用，
+		进行这些处理的代码将在以后被删除，
+		而改成直接调用 ctex 宏包的 \verb|hyperref| 选项。
+
+		\subsection{文档格式可能存在的问题}
+
+		研究生手册和其电子版\supercite{pku-thesisstyle}要求的论文封面并不一致。
+		这里以电子版为准。
+
+		\subsection{其它一些问题}
+
+		使用 GBK 编码和 pdf\LaTeX{} 编译方式时需要用户%
+		运行 \verb|gbk2uni| 程序来转换 \verb|.out| 文件，
+		否则生成的 pdf 书签可能乱码。
+		考虑到用户可能没有 \verb|gbk2uni| 程序，且有用户使用 UTF-8 编码，
+		默认的 \verb|Makefile| 和 \verb|Make.bat| 中将相关代码注释掉了，
+		用户可以自行去掉相应的注释。
+
+	\section{反馈意见和建议}
+
+	关于 pkuthss 文档模版的意见和建议，
+	请在北大未名 BBS 的 MathTools 版或 %
+	Google Code 上 pkuthss 项目的 issue tracker%
+	\footnote{\url{http://code.google.com/p/caspervector/issues/list}.}%
+	上提出，
+	或通过电子邮件\footnote%
+	{\href{mailto:CasperVector@gmail.com}{\texttt{CasperVector@gmail.com}}.}%
+	告知 Casper Ti. Vector。
+	上述三种反馈方法中，建议用户尽量采用靠前的方法。
+
+	在进行反馈时，请尽量确保已经仔细阅读本文档中的说明。
+	如果是通过 BBS 或电子邮件进行反馈，
+	请在标题中说明是关于 pkuthss 文档模版的反馈；
+	如果是通过 Google Code 进行反馈，
+	请给 issue 加上 \verb|Proj-Pkuthss| 标签。
+	如果是错误报告，
+	请说明所使用 pkuthss 模版的版本、
+	自己使用的操作系统和 \TeX{} 系统的类型和版本；
+	同时强烈建议附上一个出错的最小例子及其相应的编译日志（\verb|.log| 文件），
+	在文件较长时请使用附件。
+

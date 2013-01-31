@@ -238,14 +238,28 @@
 \newenvironment{pkuthss@int@abstract}{
 	\cleardoublepage
 	\pdfbookmark[1]{\pkuthss@tmp@abstractname}{\pkuthss@tmp@abstlabel}
-	\chapter*{\zihao{-2}\pkuthss@tmp@title}
-	\markboth{\pkuthss@tmp@abstractname}{}
-	\vspace{-2em}\par
-	\begin{center}
- 		\zihao{-3}
- 		{\pkuthss@tmp@author}\quad{\pkuthss@tmp@major}\\
- 		{\pkuthss@tmp@label@mentor}{\pkuthss@tmp@mentor}
-	\end{center}
+%	\chapter*{\zihao{-2}\pkuthss@tmp@title}
+%	\markboth{\pkuthss@tmp@abstractname}{}
+%	\vspace{-2em}\par
+%	\begin{center}
+% 		\zihao{-3}
+% 		{\pkuthss@tmp@author}\quad{\pkuthss@tmp@major}\\
+% 		{\pkuthss@tmp@label@mentor}{\pkuthss@tmp@mentor}
+%	\end{center}
+    {
+         \linespread{1.75}\selectfont
+         \def\pkuthss@tmp@len{0.35\textwidth}
+         \hspace{4em}
+         \begin{flushleft}
+            \begin{tabular}{l@{\extracolsep{0.2em}}l}
+                {论文题目：} & {\@ctitle}		\\
+		        {学号：}	& {\@studentid}	\\
+		        {姓名：}	& {\@cauthor}		\\
+                {专业：} & {\@cmajor}		\\
+                {导师：} & {\@cmentor}		\\
+            \end{tabular}
+         \end{flushleft}
+    }
 	\vspace{1em}\par
 	\section*{\zihao{4}\pkuthss@tmp@abstractname}
 	\vskip 0.5em

@@ -27,7 +27,7 @@
 		for the pkuthss document class]
 
 \def\label@ctitle{题\hphantom{汉字}目：}
-\def\label@cauthor{学生姓名：}
+\def\label@cauthor{学位申请人：}
 \def\label@studentid{学\hphantom{汉字}号：}
 \def\label@school{院\hphantom{汉字}系：}
 \def\label@cmajor{专\hphantom{汉字}业：}

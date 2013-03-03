@@ -37,14 +37,7 @@ else
 	RM = del
 endif
 
-#all: img_ doc
 all: doc
-
-img_:
-	cd img && $(MAKE)
-
-img-clean:
-	cd img && $(MAKE) clean
 
 doc:
 	$(LATEX) $(JOBNAME)
@@ -57,7 +50,3 @@ doc:
 clean:
 	$(RM) $(JOBNAME).{aux,bbl,bcf,blg,dvi,lof,log,lot,run.xml,toc,out{,.bak}} \
 		{missfont,texput}.log chap/*.aux
-
-distclean: clean img-clean
-	$(RM) $(JOBNAME).pdf
-

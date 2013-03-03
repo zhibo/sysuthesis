@@ -193,13 +193,8 @@
 		\begin{center}
 			% Emblem and inscription of the university, and type of thesis.
 			{
-				%\zihao{1}%
-				%\includegraphics[height = 2.4em]{img/pkulogo}\hspace{0.4em}%
-				%\raisebox{0.4em}{\includegraphics[height = 1.6em]{img/pkuword}}\\[0.8em]
-				%{\bfseries{\cthesisname}}
-                % -- sysulogo --
-                \zihao{1}%
-				\includegraphics[width=0.5\textheight]{img/sysulogo.jpg}\\[2.5em]
+				\zihao{1}%
+				\includegraphics[width=0.7\textwidth]{img/sysulogo.eps}\\[1.8em]
 				{\bfseries{本\hspace{0.5em}科\hspace{0.5em}生\hspace{0.5em}毕\hspace{0.5em}业\hspace{0.5em}论\hspace{0.5em}文（设计）}}
 			}
 	%		\vfill

@@ -56,5 +56,5 @@ _SYSUTHESIS_ 并不是一个重新实现的模板，因为 _PKUTHSS_ 已经很�
 "What to do if biber stops working on MacOS X")
 
 ## TODO ##
-* 重新用PostScript绘制中大logo
+* 重新用PostScript绘制中大logo（已完成，使用了[官方](http://home3.sysu.edu.cn/sysuvi/index.html)矢量图，感谢markh。）
 * 继续深度修改使更和谐易用

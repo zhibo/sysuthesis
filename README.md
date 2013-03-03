@@ -35,6 +35,16 @@ _SYSUTHESIS_ 并不是一个重新实现的模板，因为 _PKUTHSS_ 已经很�
    
     make clean
 
+## Tips ##
+1. 一些文本内容（如系统输出）可以放入`vervatim`文件夹；
+2. 如果不需要每章从奇数页开始（如盲审要求），可以在`pkuthss.cls`中的 **\LoadClass** 参数中添加 _openany_ ：
+
+        \LoadClass[fntef,a4paper,fancyhdr,cs4size,openany]{ctexbook}[2009/10/20]
+
+3. `sample.pdf`文档本身提供了很多帮助，可以细读一下，如果仍不能满足要求，可以自定义`pkuthss.cls`和`pkuthss-utf8.def`两个文件；
+4. 一个据说不错的[中文LaTeX课程](http://math.ecnu.edu.cn/~latex/ "LaTeX 科技排版")，华东师大出品。
+
+
 ## FAQ ##
 1. Windows与Linux某发行版下编译有问题
  * 尚未在 _Win_ 与 _Linux_ 实验过，欢迎补充。目前仅在 _OSX_ 下个人使用，以下提到的问题也是基于 _OSX_。

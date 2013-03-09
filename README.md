@@ -41,9 +41,9 @@ _SYSUTHESIS_ 并不是一个重新实现的模板，因为 _PKUTHSS_ 已经很�
 
         \LoadClass[fntef,a4paper,fancyhdr,cs4size,openany]{ctexbook}[2009/10/20]
 
-3. `sample.pdf`文档本身提供了很多帮助（也可通过_texdoc pkuthss_命令查看），可以细读一下，如果仍不能满足要求，可以自定义`pkuthss.cls`和`pkuthss-utf8.def`两个文件；
+3. `sample.pdf`文档本身提供了很多帮助（也可通过 _texdoc pkuthss_ 命令查看），可以细读一下，如果仍不能满足要求，可以自定义`pkuthss.cls`和`pkuthss-utf8.def`两个文件；
 4. 一个据说不错的[中文LaTeX课程](http://math.ecnu.edu.cn/~latex/ "LaTeX 科技排版")，华东师大出品。
-5. 有关中文`biblatex`格式，可参考`caspervector`文档（提供了引用_专利_的格式）：
+5. 有关中文`biblatex`格式，可参考`pkuthss.bib`中的例子，以及`caspervector`文档（提供了引用 _专利_ 的格式）：
         
         texdoc caspervector
 

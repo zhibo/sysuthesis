@@ -46,7 +46,9 @@ _SYSUTHESIS_ 并不是一个重新实现的模板，因为 _PKUTHSS_ 已经很�
 5. 有关中文`biblatex`格式，可参考`pkuthss.bib`中的例子，以及`caspervector`文档（提供了引用 _专利_ 的格式）：
         
         texdoc caspervector
-
+   
+   需要注意的是，中文引用记得加上： _userf = {zh}_ 或 _userf = {cn}_ 字段。
+   另外，添加 _type_ 字段才会显示相应的标志代码，如 _[C]_ 。
 
 ## FAQ ##
 1. Windows与Linux某发行版下编译有问题

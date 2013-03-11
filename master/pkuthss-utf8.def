@@ -46,4 +46,17 @@
 \def\cabstractname{摘要}
 \def\eabstractname{Abstract}
 
+\def\atitle{}
+\def\actitle{论文题目：}
+\def\aetitle{Title: }
+\def\amajor{}
+\def\acmajor{专\hphantom{俩字}业：}
+\def\aemajor{Major: }
+\def\aauthor{}
+\def\acauthor{硕\hphantom{a}士\hphantom{a}生：}
+\def\aeauthor{Name: }
+\def\amentor{}
+\def\acmentor{指导教师：}
+\def\aementor{Supervisor: }
+
 \endinput

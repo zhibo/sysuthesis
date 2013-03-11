@@ -159,6 +159,7 @@
 \pkuthss@int@infoitemb{ethesisname}
 \pkuthss@int@infoitemb{cabstractname}
 \pkuthss@int@infoitemb{eabstractname}
+
 % Set document information using the `key = value' grammar.
 \newcommand{\pkuthssinfo}[1]{\setkeys{pkuthss@info}{#1}}
 
@@ -238,30 +239,17 @@
 \newenvironment{pkuthss@int@abstract}{
 	\cleardoublepage
 	\pdfbookmark[1]{\pkuthss@tmp@abstractname}{\pkuthss@tmp@abstlabel}
-	\chapter*{\zihao{-2}\pkuthss@tmp@abstractname}
-	\markboth{\pkuthss@tmp@abstractname}{}
-	\vspace{-2em}\par
-%	\begin{center}
-% 		\zihao{-3}
-% 		{\pkuthss@tmp@author}\quad{\pkuthss@tmp@major}\\
-% 		{\pkuthss@tmp@label@mentor}{\pkuthss@tmp@mentor}
-%	\end{center}
-%    {
-%         \linespread{1.75}\selectfont
-%         \def\pkuthss@tmp@len{0.35\textwidth}
-%         \hspace{4em}
-%         \begin{flushleft}
-%            \begin{tabular}{l@{\extracolsep{0.2em}}l}
-%                {论文题目：} & {\@ctitle}		\\
-%		        {学号：}	& {\@studentid}	\\
-%		        {姓名：}	& {\@cauthor}		\\
-%                {专业：} & {\@cmajor}		\\
-%                {导师：} & {\@cmentor}		\\
-%            \end{tabular}
-%         \end{flushleft}
-%    }
-%	\vspace{1em}\par
-%   \section*{\zihao{4}\pkuthss@tmp@abstractname}
+    \linespread{1.75}\selectfont
+    \def\pkuthss@tmp@len{0.35\textwidth}
+    \hspace{4em}
+    \begin{flushleft}
+        \atitle \pkuthss@tmp@title \\
+        \amajor \pkuthss@tmp@major \\
+        \aauthor \pkuthss@tmp@author \\
+        \amentor \pkuthss@tmp@mentor \\
+    \end{flushleft}
+	\vspace{1em}\par
+   \section*{\zihao{4}\pkuthss@tmp@abstractname}
 	\vskip 0.5em
 }{% Keywords at the bottom of the page.
 	\vfill\noindent\textbf{\pkuthss@tmp@label@keywords}{\pkuthss@tmp@keywords}
@@ -278,6 +266,10 @@
  	\let\pkuthss@tmp@label@mentor\label@cmentorb
  	\let\pkuthss@tmp@label@keywords\label@ckeywords
 	\let\pkuthss@tmp@abstractname\cabstractname
+    \let\atitle\actitle
+    \let\amajor\acmajor
+    \let\aauthor\acauthor
+    \let\amentor\acmentor
 	\begin{pkuthss@int@abstract}
 }{\end{pkuthss@int@abstract}}
 
@@ -292,6 +284,10 @@
  	\let\pkuthss@tmp@label@mentor\label@ementor
  	\let\pkuthss@tmp@label@keywords\label@ekeywords
 	\let\pkuthss@tmp@abstractname\eabstractname
+    \let\atitle\aetitle
+    \let\amajor\aemajor
+    \let\aauthor\aeauthor
+    \let\amentor\aementor
 	\begin{pkuthss@int@abstract}
 }{\end{pkuthss@int@abstract}}
 

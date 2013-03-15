@@ -1,0 +1,52 @@
+% Head
+% Custom fonts: /usr/local/texlive/2012/texmf-dist/tex/latex/ctex/fontset/
+\documentclass[UTF8]{beamer}
+\usepackage[slantfont, boldfont]{xeCJK}
+\setCJKmainfont{STHeiti}
+
+% Set the theme
+% Custom themes: /usr/local/texlive/2012/texmf-dist/tex/latex/beamer/themes
+\usetheme{CambridgeUS}
+\usecolortheme{sysugreen}
+\useoutertheme{thesis}
+\useinnertheme{default}
+\setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{$\color{sysugreen} \blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{$\color{sysugreen} \blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{$\color{sysugreen}\blacktriangleright$}}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
+\setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+\setbeamertemplate{enumerate mini template}{\insertenumlabel}
+\title{中山大学beamer配色参考}
+\author{zhibo}
+\institute{中山大学\\信息科学与技术学院}
+\date{2013年03月16日}
+
+% Begin document
+\begin{document}
+    \maketitle
+    \section*{第一节}
+        \begin{frame}{目录}
+            \begin{itemize}
+              \item item 1
+              \item item 2
+              \item item 3
+            \end{itemize}
+        \end{frame}
+    \section{第二节}
+        \begin{frame}{内容一}
+        \end{frame}
+        \begin{frame}{内容二}
+        \end{frame}
+    \section{第三节}
+        \begin{frame}{内容一}
+        \end{frame}
+        \begin{frame}{内容二}
+        \end{frame}
+    \section{感谢}
+        \begin{frame}{提问与回答}
+            \begin{center}
+                \Huge 谢谢!
+            \end{center}
+        \end{frame}
+\end{document}

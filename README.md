@@ -50,6 +50,8 @@ _SYSUTHESIS_ 并不是一个重新实现的模板，因为 _PKUTHSS_ 已经很�
    需要注意的是，中文引用记得加上： _userf = {zh}_ 或 _userf = {cn}_ 字段。
    另外，添加 _type_ 字段才会显示相应的标志代码，如 _[C]_ 。
 
+6. 需要编译部分章节？可以在 `\begin{document}` 之前添加 `\includeonley{chap/chapx}` 。
+
 ## FAQ ##
 1. Windows与Linux某发行版下编译有问题
  * 尚未在 _Win_ 与 _Linux_ 实验过，欢迎补充。目前仅在 _OSX_ 下个人使用，以下提到的问题也是基于 _OSX_。

@@ -36,7 +36,7 @@ _SYSUTHESIS_ 并不是一个重新实现的模板，因为 _PKUTHSS_ 已经很�
     make clean
 
 ## Tips ##
-1. 一些文本内容（如系统输出）可以放入`vervatim`文件夹；
+1. 一些文本内容（如系统输出）可以放入`verbatim`文件夹；
 2. 如果不需要每章从奇数页开始（如盲审要求），可以在`pkuthss.cls`中的 **\LoadClass** 参数中添加 _openany_ ：
 
         \LoadClass[fntef,a4paper,fancyhdr,cs4size,openany]{ctexbook}[2009/10/20]
@@ -50,7 +50,7 @@ _SYSUTHESIS_ 并不是一个重新实现的模板，因为 _PKUTHSS_ 已经很�
    需要注意的是，中文引用记得加上： _userf = {zh}_ 或 _userf = {cn}_ 字段。
    另外，添加 _type_ 字段才会显示相应的标志代码，如 _[C]_ 。
 
-6. 需要编译部分章节？可以在 `\begin{document}` 之前添加 `\includeonley{chap/chapx}` 。
+6. 需要编译部分章节？可以在 `\begin{document}` 之前添加 `\includeonly{chap/chapx}` 。
 
 ## FAQ ##
 1. Windows与Linux某发行版下编译有问题

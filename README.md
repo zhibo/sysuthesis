@@ -66,3 +66,4 @@ _SYSUTHESIS_ 并不是一个重新实现的模板，因为 _PKUTHSS_ 已经很�
 * 重新用PostScript绘制中大logo（已完成，使用了[官方](http://home3.sysu.edu.cn/sysuvi/index.html)矢量图，感谢markh。）
 * 继续深度修改使更和谐易用
 * 修改论文格式和引用格式使符合[要求](http://graduate.sysu.edu.cn/Item/1880.aspx)
+* 深度修改后在LPPL协议下重新发布论文模板和参考文献模板

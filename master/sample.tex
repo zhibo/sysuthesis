@@ -2,17 +2,18 @@
 %
 % Copyright (c) 2008-2009 solvethis
 % Copyright (c) 2010-2012 Casper Ti. Vector
+% Copyright (c) 2013 Bo Zhi
 % Public domain.
 %
-% 使用前请先仔细阅读 pkuthss 和 biblatex-caspervector 的文档，
+% 使用前请先仔细阅读 sysuthesis 和 biblatex-caspervector 的文档，
 % 特别是其中的 FAQ 部分和用红色强调的部分。
 % 两者可在终端/命令提示符中用
-%   texdoc pkuthss
+%   texdoc sysuthesis
 %   texdoc biblatex-caspervector
 % 调出。
 
 % 在黑白打印时彩色链接可能变成浅灰色，此时可将“colorlinks”改为“nocolorlinks”。
-\documentclass[UTF8, colorlinks, notocbibind]{pkuthss}
+\documentclass[UTF8, colorlinks, notocbibind]{sysuthesis}
 
 % 使用 biblatex 排版参考文献，并规定其格式。
 \usepackage[backend = biber, style = sysu, utf8]{biblatex}
@@ -26,16 +27,16 @@
 % 使被强调的内容为红色。
 \newcommand{\myemph}[1]{\emph{\textcolor{red}{#1}}}
 
-% pkuthss 文档模版的版本。
+% sysuthesis 文档模版的版本。
 \newcommand{\docversion}{v1.4 rc1}
 % 设定文档的基本信息。
-\pkuthssinfo{
+\sysuthesisinfo{
 	cthesisname = {硕士学位论文}, ethesisname = {Sun Yat-sen University Master Thesis},
 	ctitle = {可信安全操作系统中访问控制机制的研究与实现},
 	% “\\”在设定 pdf 属性时会被自动过滤掉，于是得到的 pdf 属性中标题为
-	%   The PKU dissertation document classpkuthss [版本号]
+	%   The SYSU dissertation document classsysuthesis [版本号]
 	% 此处指定其被替换为“: ”，以使之为
-	%   The PKU dissertation document class: pkuthss [版本号]
+	%   The SYSU dissertation document class: sysuthesis [版本号]
 	etitle = { Research and Implementation of Access Control Mechanism in Trusted Security Operating System },
 	cauthor = {罗尼 $\cdot$ 奥沙利文},
 	eauthor = {Ronnie O'Sullivan},

@@ -1,9 +1,10 @@
 % vim:ft=tex:ts=2:sw=2
 %
-% Peking University dissertation document class
+% Sun Yat-sen University dissertation document class
 %
 % Copyright (c) 2008-2009 solvethis
 % Copyright (c) 2010-2012 Casper Ti. Vector
+% Copyright (c) 2013 Bo Zhi
 %
 % This work may be distributed and/or modified under the conditions of the
 % LaTeX Project Public License, either version 1.3 of this license or (at
@@ -14,49 +15,49 @@
 % 2005/12/01 or later.
 %
 % This work has the LPPL maintenance status `maintained'.
-% The current maintainer of this work is Casper Ti. Vector.
+% The current maintainer of this work is Bo Zhi.
 %
 % This work consists of the following files:
-%   pkuthss.cls
-%   pkuthss-gbk.def
-%   pkuthss-utf8.def
-%   pkuthss-extra.sty
+%   sysuthesis.cls
+%   sysuthesis-gbk.def
+%   sysuthesis-utf8.def
+%   sysuthesis-extra.sty
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{pkuthss}
-	[2013/01/10 v1.4-rc1 Peking University dissertation document class]
+\ProvidesClass{sysuthesis}
+	[2013/01/10 v0.1.0 Sun Yat-sen University dissertation document class]
 
 % Process the encoding options.
-\newif\ifpkuthss@opt@gbk \pkuthss@opt@gbktrue
-\DeclareOption{GBK}{\pkuthss@opt@gbktrue\PassOptionsToClass{GBK}{ctexbook}}
+\newif\ifsysuthesis@opt@gbk \sysuthesis@opt@gbktrue
+\DeclareOption{GBK}{\sysuthesis@opt@gbktrue\PassOptionsToClass{GBK}{ctexbook}}
 \DeclareOption{UTF8}%
-	{\pkuthss@opt@gbkfalse\PassOptionsToClass{UTF8}{ctexbook}}
+	{\sysuthesis@opt@gbkfalse\PassOptionsToClass{UTF8}{ctexbook}}
 % Whether to enable the default extra settings.
-\newif\ifpkuthss@opt@extra \pkuthss@opt@extratrue
-\DeclareOption{extra}{\pkuthss@opt@extratrue}
-\DeclareOption{noextra}{\pkuthss@opt@extrafalse}
-% eg. `\pkuthss@int@extraopt{spacing}' will expand to:
-%   \DeclareOption{spacing}{\PassOptionsToClass{spacing}{pkuthss-extra}}
-%   \DeclareOption{nospacing}{\PassOptionsToClass{nospacing}{pkuthss-extra}}
-\def\pkuthss@int@extraopt#1{
-	\DeclareOption{#1}{\PassOptionsToClass{#1}{pkuthss-extra}}
-	\DeclareOption{no#1}{\PassOptionsToClass{no#1}{pkuthss-extra}}
+\newif\ifsysuthesis@opt@extra \sysuthesis@opt@extratrue
+\DeclareOption{extra}{\sysuthesis@opt@extratrue}
+\DeclareOption{noextra}{\sysuthesis@opt@extrafalse}
+% eg. `\sysuthesis@int@extraopt{spacing}' will expand to:
+%   \DeclareOption{spacing}{\PassOptionsToClass{spacing}{sysuthesis-extra}}
+%   \DeclareOption{nospacing}{\PassOptionsToClass{nospacing}{sysuthesis-extra}}
+\def\sysuthesis@int@extraopt#1{
+	\DeclareOption{#1}{\PassOptionsToClass{#1}{sysuthesis-extra}}
+	\DeclareOption{no#1}{\PassOptionsToClass{no#1}{sysuthesis-extra}}
 }
-% Pass options to `pkuthss-extra'.
-% See pkuthss-extra.sty for an explanation of the options.
-\pkuthss@int@extraopt{spacing}
-\pkuthss@int@extraopt{tightlist}
-\pkuthss@int@extraopt{pdftoc}
-\pkuthss@int@extraopt{uppermark}
-\pkuthss@int@extraopt{spechap}
-\pkuthss@int@extraopt{pdfprop}
-\pkuthss@int@extraopt{colorlinks}
+% Pass options to `sysuthesis-extra'.
+% See sysuthesis-extra.sty for an explanation of the options.
+\sysuthesis@int@extraopt{spacing}
+\sysuthesis@int@extraopt{tightlist}
+\sysuthesis@int@extraopt{pdftoc}
+\sysuthesis@int@extraopt{uppermark}
+\sysuthesis@int@extraopt{spechap}
+\sysuthesis@int@extraopt{pdfprop}
+\sysuthesis@int@extraopt{colorlinks}
 % Pass all other options to `ctexbook' document class.
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 % Process all class options now.
 \ProcessOptions\relax
 
-% pkuthss is based on ctexbook; We use A4 paper, and `xiao 4' as default font size.
+% sysuthesis is based on ctexbook; We use A4 paper, and `xiao 4' as default font size.
 % CJKfntef provides \CJKunderline used in \maketitle.
 % fancyhdr provides utilities for setting headers and footers.
 \LoadClass[fntef,a4paper,fancyhdr,cs4size]{ctexbook}[2009/10/20]
@@ -70,11 +71,11 @@
 % To be removed by summer in 2013, see the fix of `\hypersetup' below.
 \RequirePackage{etoolbox}
 % Whether to enable the default extra settings.
-\ifpkuthss@opt@extra\RequirePackage{pkuthss-extra}\fi
+\ifsysuthesis@opt@extra\RequirePackage{sysuthesis-extra}\fi
 
-\ifxetex\ifpkuthss@opt@gbk
+\ifxetex\ifsysuthesis@opt@gbk
 	% No support for XeLaTeX compilation in non-unicode encoding, i.e. GBK.
-	\ClassError{pkuthss}%
+	\ClassError{sysuthesis}%
 		{XeLaTeX compilation is not supported without UTF-8}%
 		{%
 			XeLaTeX compilation without UTF-8 is very problematic.\MessageBreak
@@ -84,8 +85,8 @@
 
 \AtEndOfClass{
 	% Setting chinese captions and labels.
-	\ifpkuthss@opt@gbk\input{pkuthss-gbk.def}
-	\else\input{pkuthss-utf8.def}
+	\ifsysuthesis@opt@gbk\input{sysuthesis-gbk.def}
+	\else\input{sysuthesis-utf8.def}
 	\fi
 
 	% Automatically generate hyperlinks and bookmarks for table of contents,
@@ -99,7 +100,7 @@
 	% will be using newer versions of `ctex' package at that time.
 	\providecommand\hypersetup[1]{\PassOptionsToPackage{#1}{hyperref}}
 	\AtEndPreamble{\RequirePackage{hyperref}}
-	\ifpkuthss@opt@gbk
+	\ifsysuthesis@opt@gbk
 		\unless\ifxetex
 			\hypersetup{CJKbookmarks}
 			\unless\ifpdf
@@ -126,59 +127,59 @@
 	\fancyfoot[RO,LE]{\small\normalfont --~\thepage~--}
 }
 
-% eg. `\pkuthss@int@infoitema{ctitle}' will expand to:
+% eg. `\sysuthesis@int@infoitema{ctitle}' will expand to:
 %   \def\ctitle#1{\def\@ctitle{#1}}
-%   \define@key{pkuthss@info}{ctitle}{\ctitle{#1}}
-\def\pkuthss@int@infoitema#1{
+%   \define@key{sysuthesis@info}{ctitle}{\ctitle{#1}}
+\def\sysuthesis@int@infoitema#1{
 	\@namedef{#1}##1{\@namedef{@#1}{##1}}
-	\define@key{pkuthss@info}{#1}{\@nameuse{#1}{##1}}
+	\define@key{sysuthesis@info}{#1}{\@nameuse{#1}{##1}}
 }
-% eg. `\pkuthss@int@infoitemb{cuniversity}' will expand to:
-%   \define@key{pkuthss@info}{cuniversity}{\def\cuniversity{#1}}
-\def\pkuthss@int@infoitemb#1{
-	\define@key{pkuthss@info}{#1}{\@namedef{#1}{##1}}
+% eg. `\sysuthesis@int@infoitemb{cuniversity}' will expand to:
+%   \define@key{sysuthesis@info}{cuniversity}{\def\cuniversity{#1}}
+\def\sysuthesis@int@infoitemb#1{
+	\define@key{sysuthesis@info}{#1}{\@namedef{#1}{##1}}
 }
 % Setting document information entries.
-\pkuthss@int@infoitema{ctitle}
-\pkuthss@int@infoitema{etitle}
-\pkuthss@int@infoitema{cauthor}
-\pkuthss@int@infoitema{eauthor}
-\pkuthss@int@infoitema{studentid}
-\pkuthss@int@infoitema{date}
-\pkuthss@int@infoitema{school}
-\pkuthss@int@infoitema{cmajor}
-\pkuthss@int@infoitema{emajor}
-\pkuthss@int@infoitema{direction}
-\pkuthss@int@infoitema{cmentor}
-\pkuthss@int@infoitema{ementor}
-\pkuthss@int@infoitema{ckeywords}
-\pkuthss@int@infoitema{ekeywords}
-\pkuthss@int@infoitemb{cuniversity}
-\pkuthss@int@infoitemb{euniversity}
-\pkuthss@int@infoitemb{cthesisname}
-\pkuthss@int@infoitemb{ethesisname}
-\pkuthss@int@infoitemb{cabstractname}
-\pkuthss@int@infoitemb{eabstractname}
+\sysuthesis@int@infoitema{ctitle}
+\sysuthesis@int@infoitema{etitle}
+\sysuthesis@int@infoitema{cauthor}
+\sysuthesis@int@infoitema{eauthor}
+\sysuthesis@int@infoitema{studentid}
+\sysuthesis@int@infoitema{date}
+\sysuthesis@int@infoitema{school}
+\sysuthesis@int@infoitema{cmajor}
+\sysuthesis@int@infoitema{emajor}
+\sysuthesis@int@infoitema{direction}
+\sysuthesis@int@infoitema{cmentor}
+\sysuthesis@int@infoitema{ementor}
+\sysuthesis@int@infoitema{ckeywords}
+\sysuthesis@int@infoitema{ekeywords}
+\sysuthesis@int@infoitemb{cuniversity}
+\sysuthesis@int@infoitemb{euniversity}
+\sysuthesis@int@infoitemb{cthesisname}
+\sysuthesis@int@infoitemb{ethesisname}
+\sysuthesis@int@infoitemb{cabstractname}
+\sysuthesis@int@infoitemb{eabstractname}
 
 % Set document information using the `key = value' grammar.
-\newcommand{\pkuthssinfo}[1]{\setkeys{pkuthss@info}{#1}}
+\newcommand{\sysuthesisinfo}[1]{\setkeys{sysuthesis@info}{#1}}
 
-% Usage: \pkuthss@int@fillinblank{(number of lines)}{(line width)}{(contents)}
-\def\pkuthss@int@fillinblank#1#2#3{
+% Usage: \sysuthesis@int@fillinblank{(number of lines)}{(line width)}{(contents)}
+\def\sysuthesis@int@fillinblank#1#2#3{
 	\makebox[0pt][l]{\parbox[t]{#2}{\centering{#3}}}\mbox{}%
 	\parbox[t]{#2}{%
-		\newcount\pkuthss@tmp@linecount
-		\pkuthss@tmp@linecount=#1
-		\loop\ifnum\pkuthss@tmp@linecount>0
+		\newcount\sysuthesis@tmp@linecount
+		\sysuthesis@tmp@linecount=#1
+		\loop\ifnum\sysuthesis@tmp@linecount>0
 			% Fill specified space with underline on the bottom line. `\underline'
 			% draws line on the baseline (not the bottom line), and this is why
 			% `\CJKunderline' is used here instead.
-			\ifnum\pkuthss@tmp@linecount=1
+			\ifnum\sysuthesis@tmp@linecount=1
 				\CJKunderline{\makebox[#2]{}}
 			\else
 				\CJKunderline{\makebox[#2]{}}\\
 			\fi
-		\advance\pkuthss@tmp@linecount by -1\relax
+		\advance\sysuthesis@tmp@linecount by -1\relax
 		\repeat%
 	}%
 }
@@ -205,27 +206,27 @@
             % --Information about the author--
             {
                 \linespread{1.75}\selectfont
-                \def\pkuthss@tmp@len{0.35\textwidth}
+                \def\sysuthesis@tmp@len{0.35\textwidth}
                 \hspace{4em}
                 \begin{tabular}{l@{\extracolsep{0.2em}}c}
                     {\label@cauthor} &
-    				\pkuthss@int@fillinblank{1}{\pkuthss@tmp@len}{\bfseries{\@cauthor}}		\\
+    				\sysuthesis@int@fillinblank{1}{\sysuthesis@tmp@len}{\bfseries{\@cauthor}}		\\
                     {\label@cmentora} &
-    				\pkuthss@int@fillinblank{1}{\pkuthss@tmp@len}{\bfseries{\@cmentor}}		\\
+    				\sysuthesis@int@fillinblank{1}{\sysuthesis@tmp@len}{\bfseries{\@cmentor}}		\\
                     {\label@cmajor} &
-    				\pkuthss@int@fillinblank{1}{\pkuthss@tmp@len}{\bfseries{\@cmajor}}		\\
+    				\sysuthesis@int@fillinblank{1}{\sysuthesis@tmp@len}{\bfseries{\@cmajor}}		\\
                 \end{tabular}
             }
             \vfill
             % -- Information about commitees--
             {
                 \linespread{1.75}\selectfont
-                \def\pkuthss@tmp@len{0.3\textwidth}
+                \def\sysuthesis@tmp@len{0.3\textwidth}
                 \begin{tabular}{l@{\extracolsep{0.2em}}c}
                     {答辩委员会主席（签名）：} &
-    				\pkuthss@int@fillinblank{1}{\pkuthss@tmp@len}{}		\\
+    				\sysuthesis@int@fillinblank{1}{\sysuthesis@tmp@len}{}		\\
                     {答辩委员会委员（签名）：} &
-    				\pkuthss@int@fillinblank{5}{\pkuthss@tmp@len}{}		\\
+    				\sysuthesis@int@fillinblank{5}{\sysuthesis@tmp@len}{}		\\
                 \end{tabular}
             }
             \vfill
@@ -236,59 +237,59 @@
 }
 
 % Internal environment for typesetting abstracts.
-\newenvironment{pkuthss@int@abstract}{
+\newenvironment{sysuthesis@int@abstract}{
 	\cleardoublepage
-	\pdfbookmark[1]{\pkuthss@tmp@abstractname}{\pkuthss@tmp@abstlabel}
+	\pdfbookmark[1]{\sysuthesis@tmp@abstractname}{\sysuthesis@tmp@abstlabel}
     \linespread{1.75}\selectfont
-    \def\pkuthss@tmp@len{0.35\textwidth}
+    \def\sysuthesis@tmp@len{0.35\textwidth}
     \hspace{4em}
     \begin{flushleft}
-        \atitle \pkuthss@tmp@title \\
-        \amajor \pkuthss@tmp@major \\
-        \aauthor \pkuthss@tmp@author \\
-        \amentor \pkuthss@tmp@mentor \\
+        \atitle \sysuthesis@tmp@title \\
+        \amajor \sysuthesis@tmp@major \\
+        \aauthor \sysuthesis@tmp@author \\
+        \amentor \sysuthesis@tmp@mentor \\
     \end{flushleft}
 	\vspace{1em}\par
-   \section*{\zihao{4}\pkuthss@tmp@abstractname}
+   \section*{\zihao{4}\sysuthesis@tmp@abstractname}
 	\vskip 0.5em
 }{% Keywords at the bottom of the page.
-	\vfill\noindent\textbf{\pkuthss@tmp@label@keywords}{\pkuthss@tmp@keywords}
+	\vfill\noindent\textbf{\sysuthesis@tmp@label@keywords}{\sysuthesis@tmp@keywords}
 }
 
 % Typesetting the Chinese abstract.
 \newenvironment{cabstract}{
-	\def\pkuthss@tmp@abstlabel{cabstract}
-	\let\pkuthss@tmp@title\@ctitle
- 	\let\pkuthss@tmp@author\@cauthor
-	\let\pkuthss@tmp@major\@cmajor
- 	\let\pkuthss@tmp@mentor\@cmentor
- 	\let\pkuthss@tmp@keywords\@ckeywords
- 	\let\pkuthss@tmp@label@mentor\label@cmentorb
- 	\let\pkuthss@tmp@label@keywords\label@ckeywords
-	\let\pkuthss@tmp@abstractname\cabstractname
+	\def\sysuthesis@tmp@abstlabel{cabstract}
+	\let\sysuthesis@tmp@title\@ctitle
+ 	\let\sysuthesis@tmp@author\@cauthor
+	\let\sysuthesis@tmp@major\@cmajor
+ 	\let\sysuthesis@tmp@mentor\@cmentor
+ 	\let\sysuthesis@tmp@keywords\@ckeywords
+ 	\let\sysuthesis@tmp@label@mentor\label@cmentorb
+ 	\let\sysuthesis@tmp@label@keywords\label@ckeywords
+	\let\sysuthesis@tmp@abstractname\cabstractname
     \let\atitle\actitle
     \let\amajor\acmajor
     \let\aauthor\acauthor
     \let\amentor\acmentor
-	\begin{pkuthss@int@abstract}
-}{\end{pkuthss@int@abstract}}
+	\begin{sysuthesis@int@abstract}
+}{\end{sysuthesis@int@abstract}}
 
 % Typesetting the English abstract.
 \newenvironment{eabstract}{
-	\def\pkuthss@tmp@abstlabel{eabstract}
-	\let\pkuthss@tmp@title\@etitle
- 	\let\pkuthss@tmp@author\@eauthor
-	\let\pkuthss@tmp@major\@emajor
- 	\let\pkuthss@tmp@mentor\@ementor
- 	\let\pkuthss@tmp@keywords\@ekeywords
- 	\let\pkuthss@tmp@label@mentor\label@ementor
- 	\let\pkuthss@tmp@label@keywords\label@ekeywords
-	\let\pkuthss@tmp@abstractname\eabstractname
+	\def\sysuthesis@tmp@abstlabel{eabstract}
+	\let\sysuthesis@tmp@title\@etitle
+ 	\let\sysuthesis@tmp@author\@eauthor
+	\let\sysuthesis@tmp@major\@emajor
+ 	\let\sysuthesis@tmp@mentor\@ementor
+ 	\let\sysuthesis@tmp@keywords\@ekeywords
+ 	\let\sysuthesis@tmp@label@mentor\label@ementor
+ 	\let\sysuthesis@tmp@label@keywords\label@ekeywords
+	\let\sysuthesis@tmp@abstractname\eabstractname
     \let\atitle\aetitle
     \let\amajor\aemajor
     \let\aauthor\aeauthor
     \let\amentor\aementor
-	\begin{pkuthss@int@abstract}
-}{\end{pkuthss@int@abstract}}
+	\begin{sysuthesis@int@abstract}
+}{\end{sysuthesis@int@abstract}}
 
 \endinput
